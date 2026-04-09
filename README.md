@@ -14,7 +14,7 @@ Este repositório reúne os materiais e o registro da minha evolução durante o
 
 ### 📂 O que você vai encontrar:
 - `semester-01/`: Registros, atividades e códigos do primeiro semestre (em constante atualização).
-- `resources/`: Materiais de apoio e livros de referência.
+  - `resources/`: Materiais de apoio e livros de referência.
 
 ### 🛠️ Tecnologias e Ferramentas:
 Os recursos e linguagens utilizados são definidos conforme as demandas acadêmicas, focando inicialmente em fundamentos de computação, lógica e sistemas.
@@ -27,7 +27,7 @@ This repository gathers the materials and the record of my progress during the *
 
 ### 📂 What's inside:
 - `semester-01/`: Records, assignments, and code from the first semester (constantly updated).
-- `resources/`: Reference books and study materials.
+  - `resources/`: Reference books and study materials.
 
 ### 🛠️ Tech Stack & Tools:
 Tools and languages are defined according to academic requirements, initially focusing on computing fundamentals, logic, and systems.
