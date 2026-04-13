@@ -27,8 +27,9 @@ Opção: """).strip()
         medida = "milímetro(s)"
 
     else:
-        print("\nERRO: Digite uma opção válida (apenas 1, 2 ou 3).\n")
+        print("\nERRO: Digite uma opção válida (apenas 1, 2 ou 3).")
         exibir = False
+        continue
     
     if exibir == True:
         area = lado ** 2

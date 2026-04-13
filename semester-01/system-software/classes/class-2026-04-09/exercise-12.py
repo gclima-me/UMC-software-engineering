@@ -1,5 +1,5 @@
 # Autor: Guilherme Caetano Lima
-# Tendo como dados de entrada um arquivo em Gigabytes, construa um algoritmo que faça a conversão para Megabytes.
+# Exercício: Tendo como dados de entrada um arquivo em Gigabytes, construa um algoritmo que faça a conversão para Megabytes.
 
 print("-- Entrada de tamanho de arquivo em Gigabytes, processamento de conversão para Megabytes e Kilobytes e impressão de resultados para usuário --")
 

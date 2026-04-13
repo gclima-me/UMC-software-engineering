@@ -43,6 +43,7 @@ Opção: """).strip()
 
     else:
         print("\nERRO: Digite uma opção válida (apenas 1, 2, 3, 4, 5 ou 6).")
+        continue
 
     continuar = input("\nDeseja continua? (s/n): ").strip().lower()
 
