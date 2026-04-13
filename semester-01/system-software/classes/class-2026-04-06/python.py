@@ -12,7 +12,7 @@ nota = 20.5
 
 #bolean
 ativo = True
-ativo = False
+desligado = False
 
 num1 = float(input("Digite um número:"))
 num2 = float(input("Digite outro número:"))
