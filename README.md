@@ -10,28 +10,32 @@
 
 ## Português
 
-Este repositório reúne os materiais e o registro da minha evolução durante o curso de **Engenharia de Software**. Como estou no início da jornada, a estrutura será alimentada conforme o progresso das disciplinas.
+Este repositório reúne os materiais e o registro da minha evolução prática durante o curso de **Engenharia de Software**. A estrutura é voltada a código-fonte e projetos de laboratório, organizada de forma semântica conforme o progresso das disciplinas e cronograma das aulas.
 
-### 📂 O que você vai encontrar:
-- `semester-01/`: Registros, atividades e códigos do primeiro semestre (em constante atualização).
-  - `resources/`: Materiais de apoio e livros de referência.
+### 📂 Estrutura do Repositório:
+- `semester-01/`: Diretório centralizado do primeiro semestre.
+  - `system-software/`: Laboratórios, algoritmos e scripts de software de sistema.
+    - `classes/`: Divisão cronológica por data das aulas contendo os códigos e desafios práticos desenvolvidos em sala.
+  - `networking-and-security/`: Diretório Reservado para o armazenamento de notas de laboratório, documentação ou scripts da disciplina.
 
 ### 🛠️ Tecnologias e Ferramentas:
-Os recursos e linguagens utilizados são definidos conforme as demandas acadêmicas, focando inicialmente em fundamentos de computação, lógica e sistemas.
+Os recursos, linguagens de programação (como Python, linguagens web ou tecnologias de infraestrutura) e ferramentas são definidos e implementados de acordo com as demandas e requisitos de cada disciplina acadêmica.
 
 ---
 
 ## English
 
-This repository gathers the materials and the record of my progress during the **Software Engineering** degree. As I am at the beginning of this journey, the structure will be updated as the subjects progress.
+This repository gathers the materials and the record of my practical progress during the **Software Engineering** degree. The structure is focused on source code and lab projects, semantically organized according to the progress of the subjects and class schedules.
 
-### 📂 What's inside:
-- `semester-01/`: Records, assignments, and code from the first semester (constantly updated).
-  - `resources/`: Reference books and study materials.
+### 📂 Repository Structure:
+- `semester-01/`: First-semester centralized directory.
+  - `system-software/`: Labs, algorithms, and scripts for system software.
+    - `classes/`: Chronological division by class date containing the code and practical challenges developed in class.
+  - `networking-and-security/`: Reserved Directory for future lab notes, documentation, or scripts as the course progresses.
 
 ### 🛠️ Tech Stack & Tools:
-Tools and languages are defined according to academic requirements, initially focusing on computing fundamentals, logic, and systems.
+Resources, programming languages (such as Python, web languages, or infrastructure technologies), and tools are defined and implemented according to the demands and requirements of each academic subject.
 
 ---
 
-**Guilherme Caetano Lima** [GitHub](https://github.com/gclima-me) | [LinkedIn](https://www.linkedin.com/in/gclima-me/)
+**Guilherme Caetano Lima** [gclima.me@gmail.com](mailto:gclima.me@gmail.com) | [GitHub](https://github.com/gclima-me) | [LinkedIn](https://www.linkedin.com/in/gclima-me/)
