@@ -1,0 +1,55 @@
+CREATE DATABASE Universidade;
+USE Universidade;
+
+CREATE TABLE CURSO (
+id_curso INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+codigo INT NOT NULL,
+duracao_semestres INT NOT NULL
+);
+
+CREATE TABLE ALUNO (
+id_aluno INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+documento VARCHAR(20) NOT NULL UNIQUE,
+email VARCHAR(150) NOT NULL UNIQUE,
+telefone VARCHAR(25),
+data_nascimento DATE NOT NULL
+);
+
+CREATE TABLE PROFESSOR (
+id_professor INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(150) NOT NULL,
+email VARCHAR(150) NOT NULL UNIQUE
+);
+
+CREATE TABLE DISCIPLINA (
+id_disciplina INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+codigo INT NOT NULL,
+carga_horaria INT NOT NULL
+);
+
+CREATE TABLE TURMA (
+id_turma INT AUTO_INCREMENT PRIMARY KEY,
+periodo INT NOT NULL,
+periodo_horario VARCHAR(50) NOT NULL,
+id_disciplina INT NOT NULL,
+id_professor INT NOT NULL,
+id_curso INT NOT NULL,
+CONSTRAINT fk_turma_disciplina FOREIGN KEY (id_disciplina) REFERENCES DISCIPLINA(id_disciplina),
+CONSTRAINT fk_turma_professor FOREIGN KEY (id_professor) REFERENCES PROFESSOR(id_professor),
+CONSTRAINT fk_turma_curso FOREIGN KEY (id_turma) REFERENCES CURSO(id_curso)
+);
+
+CREATE TABLE MATRICULA (
+id_matricula INT AUTO_INCREMENT PRIMARY KEY,
+data_matricula DATE NOT NULL,
+nota_final DECIMAL(4,2)DEFAULT NULL,
+situacao VARCHAR(50) DEFAULT NULL,
+id_aluno INT NOT NULL,
+id_turma INT NOT NULL,
+CONSTRAINT fk_matricula_aluno FOREIGN KEY (id_aluno) REFERENCES ALUNO(id_aluno),
+CONSTRAINT fk_matricula_turma FOREIGN KEY (id_turma) REFERENCES TURMA(id_turma),
+CONSTRAINT uc_aluno_turma UNIQUE (id_aluno, id_turma)
+);
