@@ -1,11 +1,11 @@
 -- Database
-DROP DATABASE IF EXISTS bd_vendas;
+DROP DATABASE IF EXISTS vendas;
 
-CREATE DATABASE bd_vendas
+CREATE DATABASE vendas
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
-USE bd_vendas;
+USE vendas;
 
 -- Table e Index
 CREATE TABLE vendedor (

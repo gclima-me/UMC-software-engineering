@@ -1,11 +1,11 @@
 -- Database
-DROP DATABASE IF EXISTS bd_vendas;
+DROP DATABASE IF EXISTS vendas;
 
-CREATE DATABASE bd_vendas
+CREATE DATABASE vendas
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
-USE bd_vendas;
+USE vendas;
 
 -- Table
 CREATE TABLE vendedor (
@@ -59,17 +59,11 @@ CREATE TABLE peca (
 CREATE TABLE pedido (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     cliente_id INT UNSIGNED NOT NULL,
-    vendedor_id INT UNSIGNED NOT NULL,
     data_pedido DATE NOT NULL,
     PRIMARY KEY (id),
     CONSTRAINT fk_pedido_cliente 
         FOREIGN KEY (cliente_id)
         REFERENCES cliente (id)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT,
-    CONSTRAINT fk_pedido_vendedor 
-        FOREIGN KEY (vendedor_id)
-        REFERENCES vendedor (id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE=InnoDB;
@@ -81,6 +75,7 @@ CREATE TABLE item_pedido (
     quantidade INT UNSIGNED NOT NULL,
     preco_cotado DECIMAL(10,2) NOT NULL,
     PRIMARY KEY (id),
+    CONSTRAINT uq_item_pedido_pedido_id_peca_id UNIQUE (pedido_id, peca_id),
     CONSTRAINT fk_item_pedido_pedido 
         FOREIGN KEY (pedido_id)
         REFERENCES pedido (id)

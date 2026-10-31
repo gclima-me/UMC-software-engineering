@@ -14,7 +14,7 @@ CREATE TABLE curso (
     codigo INT UNSIGNED NOT NULL,
     semestre TINYINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT ck_curso_semestre CHECK (duracao_semestre > 0)
+    CONSTRAINT ck_curso_semestre CHECK (semestre > 0)
 ) ENGINE=InnoDB;
 
 CREATE TABLE aluno (

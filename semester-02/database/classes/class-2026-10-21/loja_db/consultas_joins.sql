@@ -1,4 +1,4 @@
-USE loja_db;
+USE loja;
 
 SELECT * FROM cliente;
 SELECT * FROM vendedor;

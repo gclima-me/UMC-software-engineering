@@ -1,11 +1,11 @@
 -- Database
-DROP DATABASE IF EXISTS loja_db;
+DROP DATABASE IF EXISTS loja;
 
-CREATE DATABASE loja_db
+CREATE DATABASE loja
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
-USE loja_db;
+USE loja;
 
 -- Table
 CREATE TABLE cliente (
