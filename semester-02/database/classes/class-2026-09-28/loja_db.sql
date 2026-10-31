@@ -1,55 +1,68 @@
--- Exercício 01:
--- (Criando banco de dados)
-CREATE DATABASE loja_bd;
+-- Database
+DROP DATABASE IF EXISTS loja_bd;
+
+CREATE DATABASE loja_bd
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
 USE loja_bd;
 
-CREATE TABLE cliente(
-	cod_cliente int,
-	nome varchar(50),
-	cpf varchar(14),
-	rua varchar(50),
-	num varchar(5),
-	bairro varchar(50), 
-	cidade varchar(50),
-	uf varchar(2),
-	cep varchar(9),
-	PRIMARY KEY (cod_cliente)
-);
+-- Table
+CREATE TABLE cliente (
+    id INT UNSIGNED NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    cpf CHAR(11) NOT NULL,
+    rua VARCHAR(50),
+    num VARCHAR(5),
+    bairro VARCHAR(50), 
+    cidade VARCHAR(50),
+    uf CHAR(2),
+    cep VARCHAR(8),
+    PRIMARY KEY (id),
+    CONSTRAINT uq_cliente_cpf UNIQUE (cpf)
+) ENGINE=InnoDB;
+
+-- Exercício 01:
+INSERT INTO cliente 
+    (id, nome, cpf, rua, num, bairro, cidade, uf, cep)
+VALUES 
+    (1, 'GILBERTO', '12345678901', 'Av. Astronautas', '1333', 'Cidade Jardim', 'S.J. dos Campos', 'SP', '12227-220');
+
+INSERT INTO cliente 
+    (id, nome, cpf, rua, num, bairro, cidade, uf, cep)
+VALUES 
+    (2, 'EDUARDO', '12345678902', 'Av. X', '1456', 'Vila', 'Rio de Janeiro', 'RJ', '35000000');
 
 -- Exercício 02:
--- (Correto)
-INSERT INTO cliente (cod_cliente, nome, cpf, rua, num, bairro, cidade, uf, cep)
-	VALUES (1, 'GILBERTO','12345678901', 'Av. Astronautas', '1333', 'Cidade Jardim','S.J. dos Campos', 'SP','12227-220');
+INSERT INTO cliente 
+    (id, nome, cpf, rua, num, bairro, cidade, uf, cep)
+VALUES 
+    (3, 'BRUNO', '12345678903', 'Rua General', '195', 'Vila Azul', 'Ouro Preto', 'MG', '35400-000');
 
--- (Concertando CPF duplicado, alterando de 1 para 2)
-INSERT INTO cliente (cod_cliente, nome, cpf, rua, num, bairro, cidade, uf, cep)
-	VALUES (2,'EDUARDO','12345678902', 'Av.X', '1456', 'Vila', 'Rio de Janeiro', 'RJ', '35000000');
+INSERT INTO cliente 
+    (id, nome, cpf, rua)
+VALUES 
+    (4, 'RICARDO', '12345678904', 'Rua Esquerda');
+
+INSERT INTO cliente 
+    (id, nome, cpf)
+VALUES 
+    (5, 'ANTONIO', '12345678905');
 
 -- Exercício 03:
--- (Concertando CPF duplicado, alterando de 1 para 2)
-INSERT INTO cliente
-    VALUES (3, 'BRUNO','12345678902', 'Rua General', '195', 'Vila Azul', 'Ouro Preto', 'MG', '35400-000');
+DELETE FROM cliente 
+    WHERE id < 0;
 
--- (Concertando especificação não-procedural para procedural)
-INSERT INTO cliente (cod_cliente, nome, cpf, rua)
-    VALUES (4, 'RICARDO','12345678903', 'Rua Esquerda');
+DELETE FROM cliente 
+    WHERE nome = 'BRUNO';
 
--- (Concertando especificação não-procedural para procedural e incluindo cod_cliente, pois não é auto_increment)
-INSERT INTO cliente (cod_cliente, nome, cpf)
-    VALUES (5, 'ANTONIO','12345678904');
+DELETE FROM cliente;
 
 -- Exercício 04:
--- (Correto, mas não há clientes com código menor que zero)
-DELETE FROM cliente WHERE cod_cliente < 0;
+UPDATE cliente 
+    SET nome = 'João' 
+    WHERE id = 1;
 
--- (Correto, mas o SGBD impede exclusão por segurança)
-DELETE FROM cliente WHERE nome = 'bruno';
-
--- (Concertando falta de * e ;)
-DELETE * FROM cliente;
-
--- Exercício 05:
--- (Correto)
-UPDATE cliente SET nome = 'João' WHERE cod_cliente = 0;
--- (Correto, mas o SGBD impede exclusão por segurança)
-UPDATE cliente SET nome = 'João' WHERE nome = 'Bruno'
+UPDATE cliente 
+    SET nome = 'João' 
+    WHERE nome = 'Bruno';

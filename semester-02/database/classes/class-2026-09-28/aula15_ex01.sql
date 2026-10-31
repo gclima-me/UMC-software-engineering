@@ -1,34 +1,40 @@
--- Criar o Banco de dados solicitado no slide 32
-CREATE DATABASE Aula15_ex01;
-USE Aula15_ex01;
+-- Database
+DROP DATABASE IF EXISTS aluno;
 
--- Criar a tabela AlunoGrad
-CREATE TABLE AlunoGrad (
-    rgm_alu INT,
-    nome_alu VARCHAR(50),
-    endereco_alu VARCHAR(70),
-    celular VARCHAR(15)
-);
+CREATE DATABASE aluno
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
 
--- EX 01: Exibir os bancos disponíveis
+USE aluno;
+
+-- Table
+CREATE TABLE aluno_grad (
+    rgm INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(100),
+    celular VARCHAR(15),
+    PRIMARY KEY (rgm)
+) ENGINE=InnoDB;
+
+-- Exercício 01: Exibir os bancos disponíveis
 SHOW DATABASES;
 
--- EX 02: Altere a tabela, adicionando a nova coluna dt_nascimento
-ALTER TABLE Aula15_ex01.AlunoGrad
-    ADD COLUMN dt_nascimento DATE;
+-- Exercício 02: Altere a tabela, adicionando a nova coluna data_nascimento
+ALTER TABLE aluno_grad
+    ADD COLUMN data_nascimento DATE;
 
--- EX 03: Renomeie a coluna celular para telefone_alu
-ALTER TABLE Aula15_ex01.AlunoGrad
-    CHANGE COLUMN celular telefone_alu VARCHAR(15);
+-- Exercício 03: Renomeie a coluna celular para telefone
+ALTER TABLE aluno_grad
+    CHANGE COLUMN celular telefone VARCHAR(11);
 
--- EX 04: Delete a coluna dt_nascimento
-ALTER TABLE Aula15_ex01.AlunoGrad
-    DROP COLUMN dt_nascimento;
+-- Exercício 04: Delete a coluna data_nascimento
+ALTER TABLE aluno_grad
+    DROP COLUMN data_nascimento;
 
--- EX 05: Altere a restrição da coluna celular para que não possa ter valores nulos
-ALTER TABLE Aula15_ex01.AlunoGrad
-    MODIFY COLUMN telefone_alu VARCHAR(15) NOT NULL;
+-- Exercício 05: Altere a restrição da coluna telefone para que não possa ter valores nulos
+ALTER TABLE aluno_grad
+    MODIFY COLUMN telefone VARCHAR(11) NOT NULL;
 
--- EX 06: Altere o nome da tabela para cad_alunos
-ALTER TABLE Aula15_ex01.AlunoGrad
-    RENAME TO cad_alunos;
+-- Exercício 06: Altere o nome da tabela para cad_aluno
+ALTER TABLE aluno_grad
+    RENAME TO cad_aluno;
